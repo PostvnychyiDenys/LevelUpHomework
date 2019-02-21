@@ -1,0 +1,41 @@
+button{
+	border-radius: 50%;
+	font-weight: bolder;
+	height: 30px;
+	width: 30px;
+	position: relative;
+}
+
+button:hover::before,
+button:hover::after{
+    content: '';
+	opacity: 0;
+	border: 1px solid #5CC2E2;
+	position: absolute;
+	left: -10px;
+	right: -10px;
+	top: -10px;
+	bottom: -10px;
+	border-radius: 50%;
+	animation: pulse 2s linear infinite;
+}
+
+button:hover::after{
+	animation-delay: 0.5s;
+}
+
+@keyframes pulse{
+	0%{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+
+	50%{
+		opacity: 1;
+	}
+
+	100%{
+		transform: scale(1);
+		opacity: 0;
+	}
+}
